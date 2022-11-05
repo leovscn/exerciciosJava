@@ -26,8 +26,7 @@ public class tadutorPig {
                 }
 
                 System.out.println(novaFrase);
-                System.out.println("Insira a frase a ser traduzida: ");
-                frase = new Scanner(System.in).nextLine();
+
             }
         System.out.println("Tradutor Finalizado!");
     }
