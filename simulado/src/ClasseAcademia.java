@@ -46,12 +46,12 @@ public class ClasseAcademia {
                 next= false;
                 while (!next) {
 
-                try {
+                    try {
                     System.out.println("Informe os meses de academia do cliente " + (i+1));
                     mesClientes[i] = new Scanner(System.in).nextInt();next = true;
-                } catch (Exception e) {
+                    } catch (Exception e) {
                     System.out.println("Tipo inválido;");
-                }
+                    }
                 }
 
 
@@ -91,7 +91,6 @@ public class ClasseAcademia {
                             next = true;
                             ClasseMenu.classeMenu();
                             break;
-
                         default:
                             System.out.println("Insira um valor válido;");
                             break;
