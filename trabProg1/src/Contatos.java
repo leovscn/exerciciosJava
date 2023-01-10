@@ -47,8 +47,9 @@ public class Contatos {
 
     public static void novoContato() throws IOException {
         System.out.println("Nome");
-        String nome = new Scanner(System.in).next();
-        File file1 = new File(System.getProperty("user.dir")+"\\Contatos\\"+nome+".txt");
+        String nome = new Scanner(System.in).nextLine();
+        String nomeArquivo = nome.replace(" ","_");
+        File file1 = new File(System.getProperty("user.dir")+"\\Contatos\\"+nomeArquivo+".txt");
 
             if(file1.exists()){
             System.out.println("este arquivo já existe!");;
@@ -59,9 +60,9 @@ public class Contatos {
             System.out.println("Email");
             String email = new Scanner(System.in).next();
 
-            Formatter saida = new Formatter(System.getProperty("user.dir")+"\\Contatos\\"+nome+".txt");
+            Formatter saida = new Formatter(System.getProperty("user.dir")+"\\Contatos\\"+nomeArquivo+".txt");
 
-            saida.format("%s%n%s%n%s", nome, telefone, email);
+            saida.format("%s%n%s%n%s", nomeArquivo, telefone, email);
 
             saida.close();}
     }
@@ -82,11 +83,11 @@ public class Contatos {
 
     public static void acessarContato() {
         System.out.println("Insira o nome");
-        String  nome = new Scanner(System.in).next();
+        String  nome = new Scanner(System.in).nextLine();
         try {
             Scanner saida = new Scanner(Paths.get(System.getProperty("user.dir") + "\\Contatos\\" + nome + ".txt"));
             while (saida.hasNext()) {
-                System.out.printf("%s", saida.next());
+                System.out.printf("%s", saida.nextLine());
                 System.out.println();
             }
         } catch (Exception e) {
